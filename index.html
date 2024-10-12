@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html {
+            height: 100vh;
+        }
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="stickyKeys.png" alt="" id="img" style="display: none;">
+    <script>
+        let beep = new Audio('beep.mp3')
+        beep.load()
+        let i = document.getElementById("img")
+        i.style.left = Math.random()*(window.innerWidth-552)+"px"
+        i.style.top = Math.random()*(window.innerHeight-204)+"px"
+
+        setTimeout(()=>{
+            i.style.display = 'block'
+            beep.play();
+        },(Math.random()*9000)+1000)
+    </script>
+</body>
+</html>
